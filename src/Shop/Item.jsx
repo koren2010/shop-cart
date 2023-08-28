@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import "./Item.css";
 import { CartContext } from "../CartContext";
 import ItemButtons from "../components/ItemButtons";
+import { dollarUS } from "../Cart/CartItem";
 
 export default function Item({ item }) {
   const itemId = item.id;
@@ -27,7 +28,7 @@ export default function Item({ item }) {
       <h3>{item.title}</h3>
       <img src={item.img} alt={item.title} />
       <p>{item.description}</p>
-      <h4>{item.price}$</h4>
+      <h4>{dollarUS.format(item.price)}</h4>
 
       {cart.find((item) => item.id === itemId) === undefined ? (
         <button onClick={addToCart}>Add</button>

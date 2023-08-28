@@ -11,7 +11,7 @@ export default function App() {
     <div className="App">
       <CartContext.Provider value={[cart, setCart]}>
         <Shop />
-        <Cart />
+        {cart.length > 0 && <Cart />}
       </CartContext.Provider>
     </div>
   );

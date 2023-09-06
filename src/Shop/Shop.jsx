@@ -1,9 +1,9 @@
 import React from "react";
-import { items } from "../dummyData";
+// import { items } from "../dummyData";
 import Item from "./Item";
 import "./Shop.css";
 
-export default function Shop() {
+export default function Shop({ items }) {
   return (
     <div className="shop">
       <h1>Shop</h1>

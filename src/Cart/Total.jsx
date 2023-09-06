@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { CartContext } from "../CartContext";
 import { dollarUS } from "./CartItem";
 import { items } from "../dummyData";
+import "./Total.css";
 
 export default function Total() {
   function getItemFromDb(id) {

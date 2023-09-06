@@ -4,5 +4,8 @@ img {
 }
 
 .item {
-  border-style: dotted;
+  border-style: none;
+  border-radius: 5%;
+  margin: 10px;
+  background-color: bisque;
 }

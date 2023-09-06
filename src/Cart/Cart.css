@@ -1,5 +1,19 @@
-.cart{
-padding: 10px;
-display: flex;
+.cart {
+  padding: 10px;
+  display: flex;
+  border-radius: 10px;
+  /* border-style: solid; */
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: fit-content;
+  align-self: center;
+  background-color: burlywood;
+  border-radius: 10px;
 }
-
+h1 {
+  text-align: center;
+}
+.cart-header {
+/* width: 100%; */
+}

@@ -1,7 +1,9 @@
 input {
-  width: 30px;
-  background-color: wheat;
-  color:indigo ;
+  width: 40px;
+  background-color: aliceblue;
+  color: indigo;
   font-weight: bold;
   font-size: medium;
+  text-align: center;
+  border-style: none;
 }

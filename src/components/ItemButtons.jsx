@@ -1,19 +1,24 @@
 import React, { useContext, useEffect, useState } from "react";
 import { CartContext } from "../CartContext";
-import "./ItemButtons.css"
+import "./ItemButtons.css";
 
 export default function ItemButtons({ itemId }) {
+  const [cart, setCart] = useContext(CartContext);
+
+  const [count, setCount] = useState(
+    cart.find((item) => item.id === itemId).count
+  );
   // util
   function removeFromCart() {
     setCart((prevCart) => prevCart.filter((item) => item.id !== itemId));
   }
   //   handlers
   function handlePlus() {
-    setCount((prevCount) => prevCount + 1);
+    setCount((prevCount) => Number(prevCount) + 1);
   }
   function handleMinus() {
     if (count > 1) {
-      setCount((prevCount) => prevCount - 1);
+      setCount((prevCount) => Number(prevCount) - 1);
     } else {
       removeFromCart();
     }
@@ -22,14 +27,12 @@ export default function ItemButtons({ itemId }) {
     removeFromCart();
   }
   function handleChange(e) {
-    setCount(() => e.target.value);
+    if (e.target.value <= 0) {
+      removeFromCart();
+    } else {
+      setCount(() => e.target.value);
+    }
   }
-
-  const [cart, setCart] = useContext(CartContext);
-
-  const [count, setCount] = useState(
-    cart.find((item) => item.id === itemId).count
-  );
 
   function updateCart() {
     removeFromCart();

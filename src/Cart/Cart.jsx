@@ -5,20 +5,21 @@ import "./Cart.css";
 import Total from "./Total";
 
 export default function Cart() {
-
   const [cart, setCart] = useContext(CartContext);
- 
-
 
   return (
-    <div className="cart">
-      <h1>Cart</h1>
-      <div className="cart-items">
-        {cart.map((item) => (
-          <CartItem key={item.id} itemId={item.id} count={item.count} />
-        ))}
+    <>
+      {/* <h1 className="cart-header">Cart</h1> */}
+      <div className="cart">
+        <div className="cart-items">
+          <table className="cart-items">
+            {cart.map((item) => (
+              <CartItem key={item.id} itemId={item.id} count={item.count} />
+            ))}
+          </table>
+        </div>
+        <Total className="total" />
       </div>
-      <Total className="total"/>
-    </div>
+    </>
   );
 }

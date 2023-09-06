@@ -18,11 +18,13 @@ export default function CartItem({ itemId, count }) {
   const itemInDb = getItem(itemId);
 
   return (
-    <div className="cart-item">
-      <span>{itemInDb.title}</span>
-      <span>{count}</span>
-      <span>{dollarUS.format(itemInDb.price * count)}</span>
-      <ItemButtons itemId={itemId} className="buttons" />
-    </div>
+    // <div className="cart-item">
+      <tr className="cart-item">
+        <td>{itemInDb.title}</td>
+        <td>{count}</td>
+        <td>{dollarUS.format(itemInDb.price * count)}</td>
+        <ItemButtons itemId={itemId} className="buttons" />
+      </tr>
+    // </div>
   );
 }
